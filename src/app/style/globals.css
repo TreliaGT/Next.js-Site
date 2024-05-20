@@ -4,14 +4,16 @@
 
 body{
   background-color: #f3e6da;
+  overflow-x: hidden;
 }
+
 
 /* styles/globals.css */
 #intro{
   position: relative;
   overflow: hidden;
   background: rgb(64,122,123);
-  background: linear-gradient(180deg, rgba(64,122,123,1) 41%, rgba(64,122,123,0.7259278711484594) 66%, rgba(64,122,123,0) 100%);
+  background: linear-gradient(180deg, #407a7b 41%, rgba(64,122,123,0.7259278711484594) 66%, rgba(64,122,123,0) 100%);
 }
 
 #intro .content{
@@ -47,7 +49,7 @@ body{
     opacity: 1;
   }
   100% {
-    transform: translateY(-50vh);
+    transform: translateY(-100vh);
     opacity: 0;
   }
 }
@@ -55,4 +57,35 @@ body{
 .btn{
     padding:8px 20px;
     border:3px solid;
+    transition: all 0.3s ease;
+}
+.btn:hover {
+  background-color: #c69b70; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
+  border-color: #c69b70; /* Change border color on hover */
+}
+
+.cursorFollower {
+  position: fixed;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid black;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s;
+  mix-blend-mode: difference;
+  z-index: 999;
+  pointer-events: none;
+}
+.cursorFollowerDot {
+  position: fixed;
+  width: 0.8rem;
+  height: 0.8rem;
+  background: #000;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s;
+  mix-blend-mode: difference;
+  z-index: 999;
+  pointer-events: none;
 }

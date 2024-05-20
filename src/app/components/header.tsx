@@ -2,16 +2,32 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import {useState} from "react";
+import React, { useState, useEffect } from 'react';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const [isScrolled, setIsScrolled] = useState(false);
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const shouldBeFixed = scrollTop > 0;
+      setIsScrolled(shouldBeFixed);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="py-4 shadow border-b-2 border-black">
+    <header   className={`py-4 shadow ${
+      isScrolled ? 'fixed top-0 z-50 bg-primary text-white w-full' : ''
+    }`}>
       <div className="container mx-auto flex justify-between items-center relative ">
         {/* Logo */}
         <div>
