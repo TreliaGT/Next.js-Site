@@ -11,8 +11,8 @@ const Header = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
   return (
-    <header className="py-4 shadow">
-      <div className="container mx-auto flex justify-between items-center relative">
+    <header className="py-4 shadow border-b-2 border-black">
+      <div className="container mx-auto flex justify-between items-center relative ">
         {/* Logo */}
         <div>
           <Link href="/">
