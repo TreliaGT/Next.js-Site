@@ -25,8 +25,8 @@ const Header = () => {
   }, []);
 
   return (
-    <header   className={`py-4 shadow ${
-      isScrolled ? 'fixed top-0 z-50 bg-primary text-white w-full' : ''
+    <header   className={`py-4 text-white ${
+      isScrolled ? 'fixed top-0 z-50 text-white w-full' : ''
     }`}>
       <div className="container mx-auto flex justify-between items-center relative ">
         {/* Logo */}
@@ -48,23 +48,23 @@ const Header = () => {
             className={`sm:flex sm:space-x-10 transition-all duration-300 menu  ${
               isMobileMenuOpen ? "block" : "hidden"
             }`}>
-            <li>
-              <Link href="/" className="hover:text-primary">
+            <li className="border-2 rounded-full border-white py-3 px-5">
+              <Link href="/">
                 Home
               </Link>
             </li>
-            <li>
-              <Link href="/portfolio" className="hover:text-primary">
+            <li className="border-2 rounded-full border-white py-3 px-5">
+              <Link href="/portfolio" >
                 Portfolio
               </Link>
             </li>
-            <li>
-              <Link href="/about" className="hover:text-primary">
+            <li className="border-2 rounded-full border-white py-3 px-5">
+              <Link href="/about" >
                 About
               </Link>
             </li>
-            <li>
-              <Link href="/contact" className="hover:text-primary">
+            <li className="border-2 rounded-full border-white py-3 px-5">
+              <Link href="/contact" >
                 Contact
               </Link>
             </li>
