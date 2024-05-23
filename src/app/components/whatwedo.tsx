@@ -5,7 +5,7 @@ import Image from "next/image";
 const FeatureSection = () => {
   return (
     <>
-      <section className="py-12 whatwedo">
+      <section className="py-32 whatwedo">
         <h2 className="text-5xl text-white mb-8 font-heading">Leading companies<br />have trusted us</h2>
         <div className="container">
           {cardsData.map((card, index) => (
